@@ -1,0 +1,52 @@
+select
+category
+, count (*) AS TOTAL_LINHAS
+, count (DISTINCT product_id) AS TOTAL_PRODUTO
+, AVG(PRICE) Media_valor
+, MAX(price) MAIOR_VALOR
+, MIN(price) MENOR_VALOR
+from products AS P
+GROUP BY category
+
+
+SELECT
+sub_category, category
+, SUM(price) AS Valor_Total
+, AVG(price) AS Valor_medio
+from products
+WHERE PRICE BETWEEN 10 AND 1000
+group by 
+CATEGORY, sub_category 
+order by 4
+limit 8
+
+SELECT sub_category
+FROM products
+GROUP BY sub_category
+
+SELECT DISTINCT category
+FROM products
+
+select *
+from products
+
+SELECT
+P.product_name, P.price
+, count (DISTINCT S.ORDER_ID) QTDE_VENDAS
+from products P
+left join sales S
+ON S.PRODUCT_ID = C.customer_id
+group by 
+p.product_name
+, price
+order BY price DESC
+limit 5
+
+select
+city
+, COUNT (DISTINCT S.order_id) QTED_VENDAS
+FROM sales S
+LEFT JOIN customer c
+ON s.customer_id = c.customer_id
+GROUP BY C.city
+ORDER BY 2
