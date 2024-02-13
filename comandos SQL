@@ -1,0 +1,45 @@
+select *
+from products
+where lower(sub_category) = 'binders'
+
+select *
+from products
+where lower (product_id) = 'off-bi-10003910'
+
+select *
+from products
+where lower (category) = 'office supplies'
+
+select *
+from products
+WHERE lower (category) = 'technology'
+and (price < 10 or sub_category = 'acessories')
+order by price 
+limit 15
+
+select * 
+from products
+where lower (category) = 'technology'
+and (sub_category) = 'Phones'
+
+select *
+from
+products
+where lower (category) = 'technology'
+AND (price > 10 or sub_category = 'acessories')
+order by price
+limit 15
+
+select *
+FROm products
+where lower (price > 1000)
+AND (price) 
+order by price
+limit 10
+
+select * 
+from products
+where lower (sub_category) = 'machines'
+and (price)
+order by price
+limit 5
